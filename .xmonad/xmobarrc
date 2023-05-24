@@ -1,0 +1,62 @@
+Config { font            = "Ubuntu Regular 12"
+       , additionalFonts = [ "Font Awesome 6 Free Solid 9"
+                           , "Font Awesome 6 Brands Regular 9"
+                           ]
+       , bgColor         = "#282c34"
+       , fgColor         = "#ffffff"
+       , position        = TopW L 100
+       , lowerOnStart    = True
+       , hideOnStart     = False
+       , allDesktops     = True
+       , persistent      = True
+       , iconRoot        = ".xmonad/images/"  -- default: "."
+       , commands = [
+                        -- Cpu usage in percent
+                      Run Cpu            [ "-t"         , "<fn=2>\xf2db</fn> <total>%"
+                                         , "-H"         , "50"
+                                         ,"--high"      , "red"
+                                         ] 20
+                        -- memory usage monitor
+                    , Run Memory         [ "--template" ,"<fn=2>\xf233</fn> <used>M <usedratio>%"
+                                         , "--Low"      , "20"        -- units: %
+                                         , "--High"     , "80"        -- units: %
+                                         ] 10
+                        -- Uptime
+                    , Run Uptime         ["-t"          ,"<fn=2>\xf0aa</fn> up: <days>d <hours>h"
+                                         ] 360
+                        -- network monitor
+                    , Run DynNetwork     [ "--template" , "<fn=2>\xf6ff</fn> <dev>: <tx>|<rx>KB"
+                                         , "--Low"      , "1000"       -- units: kB/s
+                                         , "--High"     , "5000"       -- units: kB/s
+                                         , "--high"     , "red"
+                                         ] 10
+                      -- battery monitor
+                    , Run Battery        [ "--template" , "<fn=2>\xf240</fn> <acstatus>"
+                                         , "--Low"      , "15"        -- units: %
+                                         , "--High"     , "80"        -- units: %
+                                         , "--low"      , "red"
+                                         , "--" -- battery specific options
+                                                   -- discharging status
+                                                   , "-o"	, "<left>% (<timeleft>)"
+                                                   -- AC "on" status
+                                                   , "-O"	, "<fc=#dAA520>Charging</fc> <left>%"
+                                                   -- charged status
+                                                   , "-i"	, "Charged"
+                                         ] 50                                         
+                        -- Volume
+                    , Run Volume "default" "Master" [ "--template", "<status>"
+                                         , "--"
+                                         , "--on", "<fn=2>\xf028</fn> <volume>%"
+                                         , "--onc", "#ffffff"
+                                         , "--off", "<fn=2>\xf6a9</fn> Mute"
+                                         ] 10
+                        -- Time and date
+                    , Run Date "<fn=2>\xf017</fn> %b %d %Y - %H:%M" "date" 50
+                        -- Prints out the left side items such as workspaces, layout, etc.
+                    , Run UnsafeStdinReader
+                    ]
+       , sepChar = "%"
+       , alignSep = "}{"
+       , template = " <icon=arch_25.xpm/>  %UnsafeStdinReader% }{ <box type=Bottom width=2>%dynnetwork%</box>  <box type=Bottom width=2>%battery%</box>  <box type=Bottom width=2>%cpu%</box>  <box type=Bottom width=2>%memory%</box>  <action=`/home/lmingari/.xmonad/volume.sh` button=1><action=`/home/lmingari/.xmonad/volume.sh up` button=4><action=`/home/lmingari/.xmonad/volume.sh down` button=5><box type=Bottom width=2>%default:Master%</box></action></action></action>  <fc=#c3e88d><box type=Bottom width=2>%date%</box></fc> " 
+       }
+

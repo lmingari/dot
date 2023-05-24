@@ -1,0 +1,88 @@
+! XTerm
+XTerm.termName: xterm-256color
+
+XTerm.vt100.font:     xft:DejaVuSansMono:size=10:antialias=true
+XTerm.vt100.boldFont: xft:DejaVuSansMono:size=10:antialias=true:style=bold
+
+XTerm.vt100.background:  #1d1f21
+XTerm.vt100.foreground:  #c5c8c6
+XTerm.vt100.cursorColor: #c5c8c6
+
+! black
+XTerm.vt100.color0  : #282a2e
+XTerm.vt100.color8  : #373b41
+! red
+XTerm.vt100.color1  : #a54242
+XTerm.vt100.color9  : #cc6666
+! green
+XTerm.vt100.color2  : #8c9440
+XTerm.vt100.color10 : #b5bd68
+! yellow
+XTerm.vt100.color3  : #de935f
+XTerm.vt100.color11 : #f0c674
+! blue
+XTerm.vt100.color4  : #5f819d
+XTerm.vt100.color12 : #81a2be
+! magenta
+XTerm.vt100.color5  : #85678f
+XTerm.vt100.color13 : #b294bb
+! cyan
+XTerm.vt100.color6  : #5e8d87
+XTerm.vt100.color14 : #8abeb7
+! white
+XTerm.vt100.color7  : #707880
+XTerm.vt100.color15 : #c5c8c6
+
+! URxvt
+! General settings
+URxvt.scrollBar: True
+URxvt.scrollstyle: plain
+
+URxvt*perl-ext:
+URxvt*perl-ext-common: resize-font
+
+URxvt.font:     xft:DejaVuSansMono:size=14:antialias:true
+URxvt.boldFont: xft:DejaVuSansMono:size=14:antialias:true:style=bold
+
+URxvt.cursorBlink: true
+
+URxvt.background: #1C1C1C
+URxvt.foreground: #FFFFFF
+
+URxvt.transparent: True
+URxvt.shading:     10 
+
+! black
+URxvt.color0  : #2E3436
+URxvt.color8  : #555753
+! red
+URxvt.color1  : #CC0000
+URxvt.color9  : #EF2929
+! green
+URxvt.color2  : #4E9A06
+URxvt.color10 : #8AE234
+! yellow
+URxvt.color3  : #C4A000
+URxvt.color11 : #FCE94F
+! blue
+URxvt.color4  : #3465A4
+URxvt.color12 : #729FCF
+! magenta
+URxvt.color5  : #75507B
+URxvt.color13 : #AD7FA8
+! cyan
+URxvt.color6  : #06989A
+URxvt.color14 : #34E2E2
+! white
+URxvt.color7  : #D3D7CF
+URxvt.color15 : #EEEEEC
+
+! And re-bind some keymappings (if you want, below are the defaults):
+URxvt.keysym.C-Down:  resize-font:smaller
+URxvt.keysym.C-Up:    resize-font:bigger
+URxvt.keysym.C-Left:  resize-font:reset
+URxvt.keysym.C-Right: resize-font:show
+
+! Neomutt
+neomutt.scrollBar: False
+neomutt.transparent: False
