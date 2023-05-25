@@ -1,0 +1,9 @@
+[user]
+	email = lmingari@gmail.com
+	name = lmingari
+[diff]
+	tool = vimdiff
+[merge]
+	tool = vimdiff
+[difftool]
+	prompt = false

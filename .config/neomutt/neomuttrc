@@ -1,0 +1,89 @@
+# vim: syntax=neomuttrc
+
+# Default account
+source csic.lmingari
+
+# Lists
+#lists chese-wp[0-9]@ cheese@ bsc-case@ bsc-cns@ personal@ met-jobs@
+
+# basic options
+set sleep_time = 0		# Pause 0 seconds for informational messages
+set mark_old = no		# Unread mail stay unread until read
+set mime_forward = yes		# attachments are forwarded with mail
+set wait_key = no		# mutt won't ask "press key to continue"
+set mail_check=60               # to avoid lags using IMAP
+set timeout = 30
+set alias_file=$HOME/.config/neomutt/aliases.muttrc
+set collapse_unread=no
+
+# attachments
+auto_view text/html
+auto_view text/calendar
+alternative_order text/plain text/enriched text/html
+
+# paths
+set mailcap_path = ~/.config/neomutt/mailcap
+
+# compose View Options
+set editor = "vim"
+set envelope_from                    # which from?
+#set edit_headers                     # show headers when composing
+set fast_reply                       # skip to compose when replying
+set askcc                            # ask for CC:
+set fcc_attach                       # save attachments with the body
+set forward_format = "Fwd: %s"       # format of subject when forwarding
+set forward_decode                   # decode when forwarding
+set attribution = "On %d, %n wrote:" # format of quoting header
+set reply_to                         # reply to Reply to: field
+set reverse_name                     # reply as whomever it was to
+set include                          # include message in replies
+set forward_quote                    # include message in forwards
+set text_flowed=yes
+
+# status bar, date format, finding stuff etc.
+set status_chars = " *%A"
+set status_format = "[ Folder: %f ] [%r%m messages%?n? (%n new)?%?d? (%d to delete)?%?t? (%t tagged)? ]%>─%?p?( %p postponed )?"
+set index_format='%4C %Z | %<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%m/%y ]> | %-15.15F | %?M?%4M&%4c? | %s'
+#set index_format='%4C %Z %<[y?%<[m?%<[d?%[%H:%M ]&%[%a %d]>&%[%b %d]>&%[%m/%y ]> %-15.15F (%?l?%8l&%8c?) %s'
+set sort = "threads"
+set sort_aux = "reverse-last-date-received"
+set uncollapse_jump
+set sort_re
+set reply_regexp = "^(([Rr][Ee]?(\[[0-9]+\])?: *)?(\[[^]]+\] *)?)*"
+set quote_regexp = "^( {0,4}[>|:#%]| {0,4}[a-z0-9]+[>|]+)+"
+set send_charset = "utf-8:iso-8859-1:us-ascii"
+set charset = "utf-8"
+
+# sidebar patch config
+set sidebar_visible
+set sidebar_short_path                  # Shorten mailbox names
+set sidebar_delim_chars="/"             # Delete everything up to the last / character
+set sidebar_folder_indent               # Indent folders whose names we've shortened
+set sidebar_indent_string="  "          # Indent with two spaces
+set sidebar_width = 28
+set sidebar_divider_char = ' | '
+set sidebar_format = "%B %* %?S?(?%?N?%N/?%?S?%S)?"
+set mail_check_stats
+
+# Pager View Options
+set pager_index_lines = 10
+set pager_context = 3
+set pager_stop
+set menu_scroll
+set tilde
+unset markers
+
+# Sidebar binds
+bind index,pager \CP sidebar-prev                 # Ctrl-n to select next folder
+bind index,pager \CN sidebar-next                 # Ctrl-p to select previous folder
+bind index,pager \CO sidebar-open                 # Ctrl-o to open selected folder
+bind index,pager \CB sidebar-toggle-visible       # Ctrl-b to toggle visibility of the sidebar
+
+# Fetch mail shortcut
+bind index G imap-fetch-mail
+
+folder-hook . 'push <collapse-all>'
+
+source colors.muttrc
+source aliases.muttrc
+source macros.muttrc

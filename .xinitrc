@@ -1,9 +1,9 @@
 #!/bin/sh
 
-EDITOR=vim
-BROWSER=brave
-
 userresources=$HOME/.Xresources
+
+export BROWSER=brave
+export EDITOR=vim
 
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
@@ -18,6 +18,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
+#xrandr --output eDP-1 --mode 1920x1080
 setxkbmap -layout es
 xsetroot -cursor_name left_ptr
-exec xmonad 
+exec xmonad

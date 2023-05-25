@@ -1,0 +1,17 @@
+
+macro index ,0 "<limit>~C cheese@bsc.es<enter>"
+macro index ,1 "<limit>~C cheese-wp1@bsc.es<enter>"
+macro index ,2 "<limit>~C cheese-wp2@bsc.es<enter>"
+macro index ,3 "<limit>~C cheese-wp3@bsc.es<enter>"
+macro index ,4 "<limit>~C cheese-wp4@bsc.es<enter>"
+macro index ,5 "<limit>~C cheese-wp5@bsc.es<enter>"
+
+macro index ,s0 "<tag-pattern>~C cheese@bsc.es <enter><tag-prefix-cond><save-message>=Mailing-Lists/[cheese]<enter>"
+macro index ,s1 "<tag-pattern>~C cheese-wp1@bsc.es <enter><tag-prefix-cond><save-message>=Mailing-Lists/[cheese-wp1]<enter>"
+macro index ,s2 "<tag-pattern>~C cheese-wp2@bsc.es <enter><tag-prefix-cond><save-message>=Mailing-Lists/[cheese-wp2]<enter>"
+macro index ,s3 "<tag-pattern>~C cheese-wp3@bsc.es <enter><tag-prefix-cond><save-message>=Mailing-Lists/[cheese-wp3]<enter>"
+macro index ,s4 "<tag-pattern>~C cheese-wp4@bsc.es <enter><tag-prefix-cond><save-message>=Mailing-Lists/[cheese-wp4]<enter>"
+macro index ,s5 "<tag-pattern>~C cheese-wp5@bsc.es <enter><tag-prefix-cond><save-message>=Mailing-Lists/[cheese-wp5]<enter>"
+
+macro index ,sa "<tag-pattern>!~(~d <6m)<enter><tag-prefix-cond><save-message>+Archives<enter>"
+macro index ,sc "<tag-pattern>~C bsc-case@bsc.es <enter><tag-prefix-cond><save-message>=Mailing-Lists/[Bsc-case]<enter>"

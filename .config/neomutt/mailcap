@@ -1,0 +1,18 @@
+# PDF
+application/pdf; xdg-open %s &
+
+# Images
+image/*; xdg-open %s &
+
+# html
+text/html; xdg-open %s &>/dev/null &; nametemplate=%s.html;
+text/html; w3m -I %{charset} -T text/html; copiousoutput;
+
+# calendar
+text/calendar; /home/lmingari/bin/vcalendar-filter; copiousoutput;
+
+# Video
+video/*; mpv %s
+
+# Encryption
+application/pgp-encrypted; gpg -d '%s'; copiousoutput;

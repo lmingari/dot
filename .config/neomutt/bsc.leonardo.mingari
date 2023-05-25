@@ -1,0 +1,54 @@
+# vim: syntax=neomuttrc
+
+set from = "leonardo.mingari@bsc.es"
+set realname = "lmingari"
+set my_user = "lalejand"
+set my_pass = "`pass Mail/bsc.es`"
+#set my_pass = "Lm1ng4r!"
+
+set signature ="~/.config/neomutt/signature"
+
+unsubscribe *
+subscribe cheese@ \
+          cheese-wp2@ \
+          cheese-wp3@ \
+          cheese-wp4@ \
+          cheese-wp5@ \
+          cheese-bsc@ \
+          bsc-case@   \
+          bsc-cns@    \
+          personal@   \
+          convocatorias@
+
+# imaps
+unmailboxes *
+set folder = "imaps://mail.bsc.es"
+set spoolfile = "+INBOX"
+set imap_user = $my_user
+set imap_pass = $my_pass
+set postponed = "+Drafts"
+set trash     = "+Trash"
+set record    = "+Sent"
+
+# smtp
+set smtp_pass = $my_pass
+set smtp_url = "smtps://$my_user@mail.bsc.es:465"
+set ssl_force_tls = yes
+set ssl_use_tlsv1 = yes
+
+mailboxes $spoolfile
+mailboxes $postponed $record $trash +Archives
+mailboxes =Mailing-Lists
+mailboxes =Mailing-Lists/[cheese]     \
+          =Mailing-Lists/[cheese-wp2] \
+          =Mailing-Lists/[cheese-wp3] \
+          =Mailing-Lists/[cheese-wp4] \
+          =Mailing-Lists/[cheese-wp5] \
+          =Mailing-Lists/[cheese-bsc] \
+          =Mailing-Lists/[Bsc-case]   \
+          =Mailing-Lists/[BSC-CNS]    \
+          =Mailing-Lists/[Personal]   \
+          =Mailing-Lists/[Convocatorias]
+
+set header_cache = ~/.cache/neomutt/bsc.leonardo.mingari/headers
+set message_cachedir = ~/.cache/neomutt/bsc.leonardo.mingari/bodies
