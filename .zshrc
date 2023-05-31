@@ -1,12 +1,17 @@
-#
-# ~/.bashrc
-#
+# Lines configured by zsh-newuser-install
+HISTFILE=~/.histfile
+HISTSIZE=1000
+SAVEHIST=1000
+bindkey -v
+bindkey '^R' history-incremental-search-backward
 
-# If not running interactively, don't do anything
-[[ $- != *i* ]] && return
+# End of lines configured by zsh-newuser-install
+# The following lines were added by compinstall
+zstyle :compinstall filename '/home/lmingari/.zshrc'
 
-#PS1='[\u@\h \W]\$ '
-PS1='\e[1;33m[\u@\h \W]\$ \e[m'
+autoload -Uz compinit
+compinit
+# End of lines added by compinstall
 
 # The 'ls' family (this assumes you use the GNU ls)
 alias ls='ls --color=auto --group-directories-first'	# add colors 

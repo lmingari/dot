@@ -4,6 +4,7 @@ userresources=$HOME/.Xresources
 
 export BROWSER=brave
 export EDITOR=vim
+export SUDO_ASKPASS="/usr/lib/ssh/ssh-askpass"
 
 if [ -f "$userresources" ]; then
     xrdb -merge "$userresources"
@@ -18,7 +19,7 @@ if [ -d /etc/X11/xinit/xinitrc.d ] ; then
  unset f
 fi
 
-#xrandr --output eDP-1 --mode 1920x1080
+xrandr --output eDP-1 --mode 1920x1080
 setxkbmap -layout es
 xsetroot -cursor_name left_ptr
 exec xmonad

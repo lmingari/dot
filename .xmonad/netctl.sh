@@ -2,7 +2,7 @@
 
 profile=$1
 NOTIF="Network"
-export SUDO_ASKPASS=$HOME/bin/rofi-askpass.sh 
+#export SUDO_ASKPASS=$HOME/bin/rofi-askpass.sh 
 
 main() {
     [[ -z ${profile} ]] && exit 0

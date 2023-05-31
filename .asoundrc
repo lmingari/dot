@@ -1,2 +1,2 @@
-defaults.pcm.!card "Generic"
-defaults.ctl.!card "Generic"
+defaults.pcm.!card "Generic_1"
+defaults.ctl.!card "Generic_1"
