@@ -9,8 +9,8 @@ bindkey '^R' history-incremental-search-backward
 # The following lines were added by compinstall
 zstyle :compinstall filename '/home/lmingari/.zshrc'
 
-autoload -Uz compinit
-compinit
+autoload -Uz compinit && compinit
+
 # End of lines added by compinstall
 
 # The 'ls' family (this assumes you use the GNU ls)
@@ -22,3 +22,14 @@ alias lx='ls -hlXB'		# sort by extension
 alias lk='ls -hlSr'		# sort by size
 alias lt='ls -hltr'		# sort by date
 alias dotgit='/usr/bin/git --git-dir=/home/lmingari/.cfg/ --work-tree=/home/lmingari'
+
+# Git in Zsh 
+autoload -Uz vcs_info
+precmd_vcs_info() { vcs_info }
+precmd_functions+=( precmd_vcs_info )
+setopt prompt_subst
+zstyle ':vcs_info:git:*' formats '(%b)'
+
+RPROMPT='%F{red}${vcs_info_msg_0_}%f'
+PROMPT='%B%F{yellow}%~ >%f%b '
+
